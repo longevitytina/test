@@ -40,11 +40,7 @@ export default class SearchContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <Search
-          handleInput={this.handleInput}
-          handleSubmit={this.handleSubmit}
-          query={this.state.query}
-        />
+        <Search handleInput={this.handleInput} query={this.state.query} />
         <Results results={this.state.results} />
       </React.Fragment>
     );
