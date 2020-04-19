@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Search({ handleInput, handleSubmit, query }) {
+export default function Search({ handleInput, query }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <input onChange={handleInput} type="text" value={query} />
     </form>
   );
