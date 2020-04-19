@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import axios from "axios";
+import Results from "./Results";
 
 export default class SearchContainer extends Component {
   state = {
@@ -34,11 +35,14 @@ export default class SearchContainer extends Component {
 
   render() {
     return (
-      <Search
-        handleInput={this.handleInput}
-        handleSubmit={this.handleSubmit}
-        query={this.state.query}
-      />
+      <React.Fragment>
+        <Search
+          handleInput={this.handleInput}
+          handleSubmit={this.handleSubmit}
+          query={this.state.query}
+        />
+        <Results results={this.state.results} />
+      </React.Fragment>
     );
   }
 }
