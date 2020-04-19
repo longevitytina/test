@@ -1,19 +1,34 @@
 import React, { Component } from "react";
 import Search from "./Search";
+import axios from "axios";
 
 export default class SearchContainer extends Component {
   state = {
     query: "default state",
+    results: [],
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state.query);
+
+    axios
+      .get("https://api.giphy.com/v1/gifs/search", {
+        params: {
+          q: this.state.query,
+          api_key: "g7FJSuBOaK5Be2W7dM6NceeBQ29JmuoG",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   handleInput = (event) => {
     this.setState({ query: event.target.value });
   };
+
+  handleResult = () => {};
 
   render() {
     return (
