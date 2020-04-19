@@ -25,16 +25,14 @@ export default class SearchContainer extends Component {
 
         this.setState({
           results: response.data.data,
-          query: "",
         });
       });
   };
 
   handleInput = (event) => {
-    this.setState({ query: event.target.value });
-    if (this.state.query.length > 2) {
+    this.setState({ query: event.target.value }, () => {
       this.handleSubmit(event);
-    }
+    });
   };
 
   handleResult = () => {};
