@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default class SearchContainer extends Component {
   state = {
-    query: "default state",
+    query: "duck",
     results: [],
   };
 
@@ -21,6 +21,8 @@ export default class SearchContainer extends Component {
       })
       .then((response) => {
         console.log(response);
+
+        this.setState({ results: response.data.data });
       });
   };
 
