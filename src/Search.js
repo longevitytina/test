@@ -1,19 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import "./Search.scss";
 
-export default class Search extends Component {
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.props.onSubmit}>
-          <input
-            type="text"
-            name="search"
-            value={this.props.query}
-            onInput={this.props.onInputChange}
-          />
-          <input type="submit" value="Search" />
-        </form>
-      </div>
-    );
-  }
+export default function Search({ handleInput, query }) {
+  return (
+    <form className="Search">
+      <input onChange={handleInput} type="text" value={query} />
+    </form>
+  );
 }
