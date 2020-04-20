@@ -10,7 +10,7 @@ export default class Home extends Component {
       <div className="Home">
         <h1>Hi there</h1>
         <Switch>
-          <Route path="/details" component={Details} />
+          <Route path="/details/:id" component={Details} />
           <Route path="/" component={SearchContainer} />
         </Switch>
       </div>

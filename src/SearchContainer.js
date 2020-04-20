@@ -9,10 +9,7 @@ export default class SearchContainer extends Component {
     results: [],
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state.query);
-
+  handleSubmit = () => {
     axios
       .get("https://api.giphy.com/v1/gifs/search", {
         params: {
@@ -34,8 +31,6 @@ export default class SearchContainer extends Component {
       this.handleSubmit(event);
     });
   };
-
-  handleResult = () => {};
 
   render() {
     return (
